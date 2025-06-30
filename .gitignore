@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environment
+# This is crucial! It ignores your virtual environment folder.
+# Common names include 'venv', '.venv', 'env'
+venv/
+.venv/
+env/
+.env/
+
+# Environment variables file
+# This is for your .env file containing API keys and other secrets.
+# NEVER commit sensitive information.
+.env
+
+# IDE-specific files (add your IDE's specific patterns here if not already covered)
+# VS Code
+.vscode/
+# You might want to include some .vscode files if they are project-specific
+# and shared, e.g., !.vscode/settings.json, !.vscode/tasks.json
+# But generally, avoid committing IDE configuration specific to YOUR machine.
+
+# PyCharm
+.idea/
+
+# Operating System Files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Logs and databases
+*.log
+*.sqlite3 # If you use SQLite databases
+
+# Test and coverage reports
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# Any other specific output/temporary files for your project
+reports/ # This will ignore the entire reports directory
