@@ -2,15 +2,15 @@ import re
 import json
 import os
 
-
 def parse_llm_commit_analysis(llm_output_text):
+    # ... (Keep this function as it is) ...
     """
     Parses the markdown output from the LLM's commit analysis into a structured dictionary.
     """
     parsed_data = {
         "confidence_score": None,
         "justification": "",
-        "suggestions_for_improvement": []
+        "actionable_improvements": []
     }
 
     # Extract Confidence Score
@@ -19,25 +19,91 @@ def parse_llm_commit_analysis(llm_output_text):
         parsed_data["confidence_score"] = int(score_match.group(1))
 
     # Extract Justification
-    # This assumes Justification is a single block of text after "Justification:"
-    # and before "Suggestions for Improvement:" or the end of the string.
-    justification_match = re.search(r"Justification: (.*?)(?=Suggestions for Improvement:|\Z)", llm_output_text, re.DOTALL)
+    justification_match = re.search(r"Justification: (.*?)(?=Actionable Improvements:|\Z)", llm_output_text, re.DOTALL)
     if justification_match:
         parsed_data["justification"] = justification_match.group(1).strip()
 
     # Extract Suggestions for Improvement
-    suggestions_match = re.search(r"Suggestions for Improvement:\s*(- .*)", llm_output_text, re.DOTALL)
+    suggestions_match = re.search(r"Actionable Improvements:\s*(- .*)", llm_output_text, re.DOTALL)
     if suggestions_match:
         suggestions_raw = suggestions_match.group(1)
-        # Split by lines and filter for non-empty lines that start with '- '
         suggestions_list = [
-            line.strip()[2:].strip() # Remove '- ' prefix and trim whitespace
+            line.strip()[2:].strip()
             for line in suggestions_raw.split('\n')
             if line.strip().startswith('- ')
         ]
-        parsed_data["suggestions_for_improvement"] = suggestions_list
+        parsed_data["actionable_improvements"] = suggestions_list
 
     return parsed_data
+
+
+def parse_llm_pr_analysis(llm_output_text):
+    """
+    Parses the markdown output from the LLM's PR analysis into a structured dictionary.
+    """
+    parsed_data = {
+        "release_readiness_score": None,
+        "justification": "",
+        "actionable_improvements": []
+    }
+
+    # Extract Release Readiness Score
+    score_match = re.search(r"Release Readiness Score: (\d+)", llm_output_text)
+    if score_match:
+        parsed_data["release_readiness_score"] = int(score_match.group(1))
+
+    # Extract Justification
+    justification_match = re.search(r"Justification: (.*?)(?=Actionable Improvements:|\Z)", llm_output_text, re.DOTALL)
+    if justification_match:
+        parsed_data["justification"] = justification_match.group(1).strip()
+
+    # Extract Actionable Improvements
+    improvements_match = re.search(r"Actionable Improvements:\s*(- .*)", llm_output_text, re.DOTALL)
+    if improvements_match:
+        improvements_raw = improvements_match.group(1)
+        improvements_list = [
+            line.strip()[2:].strip() # Remove '- ' prefix and trim whitespace
+            for line in improvements_raw.split('\n')
+            if line.strip().startswith('- ')
+        ]
+        parsed_data["actionable_improvements"] = improvements_list
+
+    return parsed_data
+
+
+def parse_llm_milestone_analysis(llm_output_text):
+    """
+    Parses the markdown output from the LLM's milestone analysis into a structured dictionary.
+    """
+    parsed_data = {
+        "release_confidence_score": None,
+        "justification": "",
+        "actionable_improvements": []
+    }
+
+    # Extract Release Confidence Score
+    score_match = re.search(r"Release Confidence Score: (\d+)", llm_output_text)
+    if score_match:
+        parsed_data["release_confidence_score"] = int(score_match.group(1))
+
+    # Extract Justification
+    justification_match = re.search(r"Justification: (.*?)(?=Actionable_improvements:|\Z)", llm_output_text, re.DOTALL)
+    if justification_match:
+        parsed_data["justification"] = justification_match.group(1).strip()
+
+    # Extract Actional Recommendations
+    recommendations_match = re.search(r"Actionable_improvements:\s*(- .*)", llm_output_text, re.DOTALL)
+    if recommendations_match:
+        recommendations_raw = recommendations_match.group(1)
+        recommendations_list = [
+            line.strip()[2:].strip() # Remove '- ' prefix and trim whitespace
+            for line in recommendations_raw.split('\n')
+            if line.strip().startswith('- ')
+        ]
+        parsed_data["actionable_improvements"] = recommendations_list
+
+    return parsed_data
+
 
 def save_analysis_to_json(data, filename="analysis_report.json", output_dir="reports"):
     """

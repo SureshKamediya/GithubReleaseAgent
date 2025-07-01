@@ -1,8 +1,11 @@
 annotated-types==0.7.0
 cachetools==5.5.2
 certifi==2025.6.15
+cffi==1.17.1
 charset-normalizer==3.4.2
 colorama==0.4.6
+cryptography==45.0.4
+Deprecated==1.2.18
 google-ai-generativelanguage==0.6.15
 google-api-core==2.25.1
 google-api-python-client==2.174.0
@@ -18,11 +21,14 @@ proto-plus==1.26.1
 protobuf==5.29.5
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
+pycparser==2.22
 pydantic==2.11.7
 pydantic_core==2.33.2
+PyGithub==2.6.1
+PyJWT==2.10.1
+PyNaCl==1.5.0
 pyparsing==3.2.3
 python-dotenv==1.1.1
-python-gitlab==6.1.0
 requests==2.32.4
 requests-toolbelt==1.0.0
 rsa==4.9.1
@@ -31,3 +37,4 @@ typing-inspection==0.4.1
 typing_extensions==4.14.0
 uritemplate==4.2.0
 urllib3==2.5.0
+wrapt==1.17.2
