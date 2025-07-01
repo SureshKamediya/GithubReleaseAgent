@@ -60,19 +60,22 @@ cd GithubReleaseAgent
 
 It's highly recommended to use a virtual environment to manage project dependencies.
 
-# Create the virtual environment
+Create the virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-# Activate the virtual environment
-# On Windows (Git Bash):
+Activate the virtual environment
+
+On Windows (Git Bash):
 ```bash
 source ./.venv/Scripts/activate
 ```
-# On Linux/macOS:
-# source ./.venv/bin/activate
+On Linux/macOS:
+```bash
+source ./.venv/bin/activate
+```
 
 ### 3. Install Dependencies
 

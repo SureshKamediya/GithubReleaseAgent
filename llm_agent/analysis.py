@@ -16,7 +16,7 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Initialize the Generative Model
-model = genai.GenerativeModel('gemini-1.5-pro-latest') # Or 'gemini-1.5-flash-latest' if you prefer a faster/cheaper option
+model = genai.GenerativeModel('gemini-1.5-flash-latest') # Or 'gemini-1.5-flash-latest' if you prefer a faster/cheaper option
 
 def analyze_commit_with_llm(commit_message, commit_diff, review_comments=""):
     """

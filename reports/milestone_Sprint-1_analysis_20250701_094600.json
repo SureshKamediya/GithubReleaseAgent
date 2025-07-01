@@ -1,0 +1,66 @@
+{
+    "milestone_title": "Sprint-1",
+    "issues": {
+        "2": {
+            "number": 2,
+            "title": "Issue-2",
+            "url": "https://github.com/SureshKamediya/wfa/issues/2",
+            "state": "open",
+            "comments": [],
+            "associated_prs": {}
+        },
+        "1": {
+            "number": 1,
+            "title": "Issue-1",
+            "url": "https://github.com/SureshKamediya/wfa/issues/1",
+            "state": "closed",
+            "comments": [
+                {
+                    "user": "SureshKamediya",
+                    "body": "You have just told to add project details, but haven't added any yet"
+                },
+                {
+                    "user": "SureshKamediya",
+                    "body": "https://github.com/SureshKamediya/wfa/pull/3"
+                }
+            ],
+            "associated_prs": {
+                "3": {
+                    "number": 3,
+                    "title": "Update README.md",
+                    "url": "https://github.com/SureshKamediya/wfa/pull/3",
+                    "state": "closed",
+                    "user": "SureshKamediya",
+                    "commits": [
+                        {
+                            "sha": "6c3755e57d409d1e4169b1c8acb28a9709281953",
+                            "message": "Update README.md",
+                            "author": "SureshKamediya",
+                            "date": "2025-06-30T18:52:17+00:00",
+                            "diff": "No diff available.",
+                            "llm_analysis": {
+                                "confidence_score": 20,
+                                "justification": "The commit message \"Update README.md\" is vague and doesn't reflect the actual changes made.  The lack of a diff indicates no code changes were committed, which is unusual for a commit.  The review comment highlights a critical missing piece of information in the README — details about the project itself.  This is a significant omission.  Without seeing the actual changes to the README, it's impossible to assess code quality directly. However, the current state suggests a lack of completeness and insufficient attention to detail in documentation.  There is no indication of any test coverage needed as no code has changed. The very existence of this commit is questionable.",
+                                "suggestions_for_improvement": [
+                                    "**Provide a detailed commit message:** The commit message should clearly describe the changes made to the README, such as \"Added project details to README.md, including [list of added details]\".",
+                                    "**Include the diff:** The commit should include the diff showing the changes to the README.md file. This enables proper review and understanding of the changes.",
+                                    "**Address SureshKamediya's review comment:**  Thoroughly update the README.md to include comprehensive project details, going beyond just technological aspects.  Describe the project's goals, functionality, and intended use.",
+                                    "**Consider breaking down changes into smaller, more focused commits:** If there were substantial changes to the README, consider breaking them down into smaller, atomic commits with specific, descriptive messages.",
+                                    "**Re-evaluate the need for this commit:**  If the changes to the README are minor, consider whether this commit is even necessary.  Multiple small changes could be combined into a single larger commit, provided it still remains understandable."
+                                ]
+                            }
+                        }
+                    ],
+                    "reviews": [
+                        {
+                            "user": "SureshKamediya",
+                            "state": "COMMENTED",
+                            "body": "please add project details, you have only added details about tech but nothing about project"
+                        }
+                    ],
+                    "comments": []
+                }
+            }
+        }
+    }
+}
