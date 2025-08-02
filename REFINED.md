@@ -48,7 +48,6 @@ Our agent directly tackles the limitations of traditional approaches:
 
 The comprehensive vision involves a robust, event-driven architecture designed for scalability and reliability.
 
-**[INSERT ENTERPRISE-LEVEL WORKFLOW DIAGRAM IMAGE HERE]**
 ![Enterprise-ReleaseAgent-Flowchart](documents/Enterprise-level-ReleaseAgent.png)
 
 ### Key Components:
@@ -82,7 +81,6 @@ The comprehensive vision involves a robust, event-driven architecture designed f
 
 To demonstrate core capabilities and secure further investment, we will focus on a subset of the full vision for a hackathon:
 
-**[INSERT HACKATHON-SCOPED WORKFLOW DIAGRAM IMAGE HERE]**
 ![Hackathon-ReleaseAgent-Flowchart](documents/Hackathon-ReleaseAgent.png)
 
 ### Hackathon Components & Flow:
